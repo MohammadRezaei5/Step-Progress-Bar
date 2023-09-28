@@ -1,0 +1,255 @@
+:root {
+  --white-color: #fff;
+}
+/* ------------------  FONTS  ------------------ */
+@font-face {
+  font-family: vazir;
+  src: url(Fonts/Vazirmatn-FD-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: vazir;
+  src: url(Fonts/Vazirmatn-FD-SemiBold.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: vazir;
+  src: url(Fonts/Vazirmatn-FD-Thin.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: vazir;
+  src: url(Fonts/Vazirmatn-FD-Regular.ttf);
+  font-weight: 400;
+}
+/* ------------------ CSS RESETS  ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "vazir", sans-serif;
+}
+body {
+  background: #0068ff;
+  background: radial-gradient(
+    circle,
+    rgba(0, 104, 255, 1) 0%,
+    rgba(16, 24, 40, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+button:active {
+  box-shadow: none;
+  top: 1px;
+}
+button {
+  transition: background-color 0.2s ease-in-out;
+}
+/* ------------------  WRAPPER  ------------------ */
+.wrapper {
+  width: 423px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+/* ------------------  TITLE  ------------------ */
+.title {
+  font-size: 25px;
+  color: var(--white-color);
+  margin-bottom: 10px;
+}
+/* ------------------  CONTAINERS  ------------------ */
+.container {
+  /* width: 423px; */
+  width: 100%;
+  min-height: 344px;
+  padding: 40px;
+  background-color: var(--white-color);
+  box-shadow: 8px 8px 24px rgba(2, 2, 70, 0.05);
+  border-radius: 8px;
+  gap: 10px;
+}
+.progress-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* ------------------  PROGRESS-SECTIONS  ------------------ */
+.progress-sections {
+  gap: 12px;
+  display: flex;
+}
+.progress-bar {
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.progress-info {
+  padding-top: 4px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.progress-circle {
+  width: 24px;
+  height: 24px;
+  background-color: #eff0f7;
+  border-radius: 12px;
+}
+.progress-line {
+  width: 2px;
+  flex: 1 1 0;
+  background-color: #e4e7ec;
+  border-radius: 2px;
+}
+.progress-circle-dot-container {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-circle-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--white-color);
+  border-radius: 9999px;
+}
+/* ----- WHEN ACTIVE ----- */
+.progress-circle.active {
+  box-shadow: 0px 0px 0px 4px #e4e7ec;
+  background-color: #020246;
+}
+/* ----- WHEN CHECKMARK ----- */
+.progress-circle.checkmark {
+  background-color: #020246;
+  background-image: url(./Content.svg);
+}
+.progress-circle.checkmark .progress-circle-dot-container .progress-circle-dot {
+  background-color: transparent;
+}
+.progress-circle.checkmark + .progress-line {
+  background-color: #020246;
+}
+.progress-info-title {
+  color: #020246;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.progress-info-sub-title {
+  color: #667085;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+/* ------------------  BUTTONS-SECTIONS  ------------------ */
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow-btn {
+  display: flex;
+  gap: 7px;
+}
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  background-color: #020246;
+  box-shadow: 8px 8px 24px 0 rgba(2, 2, 70, 0.15);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: var(--white-color);
+  position: relative;
+  font-size: 15px;
+}
+.button i {
+  font-size: 12px;
+  height: 10px;
+}
+.button:hover {
+  background-color: #232359;
+}
+.button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.button-container #submit {
+  background-color: #fb8500;
+  box-shadow: 0 0 24px 0 rgb(255, 135, 0, 0.15);
+}
+.button-container #submit:hover {
+  background-color: #f59a09;
+}
+/* ------------------  SUCCESS-SECTIONS  ------------------ */
+.success {
+  color: #22c55e;
+  text-align: center;
+}
+/* ------------------  TOAST-SECTIONS  ------------------ */
+.info-wrapper {
+  width: 81%;
+  display: none;
+}
+.toast {
+  padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  border-right: 8px solid #ffc021;
+}
+.info-wrapper .toast .container-1 i {
+  color: #ffc021;
+}
+.info-wrapper .toast .container-1 {
+  display: flex;
+  align-items: center;
+}
+.info-wrapper .toast .container-2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #020246;
+}
+.info-wrapper .toast .container-2 .reload-btn {
+  background-color: rgb(242, 223, 215);
+  border: 0;
+  outline: 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: rgba(252, 131, 79, 0.22) 0px 4px 16px,
+    rgba(234, 156, 122, 0.14) 0px 8px 32px;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+}
+.info-wrapper .toast .container-2 .reload-btn:hover {
+  background-color: rgb(250, 219, 207);
+}
+/* ------------------  MEDIA-QUERY  ------------------ */
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 345px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .info-wrapper {
+    width: 100%;
+  }
+}
